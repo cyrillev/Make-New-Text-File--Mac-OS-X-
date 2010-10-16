@@ -10,27 +10,27 @@
     Filename:    NOTES
 
     # END VERSION DATA #
+    
+    10/16/2010 02:08:08 AM - There is a good deal of scrap code at the bottom
+    of the Make New Text file.scpt file. This may come in handy if I need to
+    alter this script to work in a way that roots with a file called
+    "Untitled.txt" rather than the Untitled.mm.dd.yyyy.random.txt format I use
+    now to avoid any collisions with duplate file names.
 
-	here are some notes
-	
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the
-    1500s, when an unknown printer took a galley of type and scrambled it to
-    make a...
-    
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the
-    1500s, when an unknown printer took a galley of type and scrambled it to
-    make a...
-    
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the
-    1500s, when an unknown printer took a galley of type and scrambled it to
-    make a...
-    
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the
-    1500s, when an unknown printer took a galley of type and scrambled it to
-    make a...
-    
-    07/14/2010 03:47:32 PM - here are some notes
+    If you do not have a Finder window open, the script will be aware of this
+    and graceully abort.
+
+    Curently, you can run the script from Script Eitor, which is not at all
+    convenient, or, it can be run from a keyboard Macro Application like
+    Keyboard Maestro. There is also fast scripts.
+
+    All paths to shell commands are the full path, and should in theory work
+    on all Mac OS X systems from around 10.2 forward. I dont thkn there is
+    anything all that unusual i am using to make this happen, and AppleScript
+    has been stable for a long time especially with the basic virable and
+    condition being all I am using.
+
+    This will only work on the Mac, though could be adapted to any *nix OS by
+    probably going all bash, which I started trying to do, but got too messy
+    with all the `do shell script` crap. Though do make sure you change the
+    `open -a` as that is not supported anywhere but Max OS X I beieve.
