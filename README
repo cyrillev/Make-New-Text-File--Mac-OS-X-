@@ -1,0 +1,33 @@
+
+    Name:        New Text File ( New Text File in Current Directory/Window )
+    Version:     0.1
+    Author:      Scott Haneda <scott@newgeo.com>
+    Created:     10/16/2010
+    Location:    http://github.com/slowcode
+    Language:    AppleScript / Bash
+    Support:     See files DOCUMENTATION, LICENSE, NOTES, README, VERSION
+    License:     The MIT License
+    Filename:    README
+
+    # END VERSION DATA #
+
+	- Supporting Files
+        DOCUMENTATION -     Explanation of how to use the software
+        HISTORY -           History of changes to the software
+        LICENSE -           What you are allowed to do with this software
+        NOTES -             Internal working notes
+        README -            This file
+
+    - Description
+        This is a description of the software that is going 80 characters wide, or
+        should be go more I am not sure these days, people have larger monitors.
+        but 72 works pretty well going back in time.
+
+    - Installation
+        If short, type it here, otherwise, See: DOCUMENTATION
+
+    - Usage
+        If short, type it here, otherwise, See: DOCUMENTATION
+
+    - Uninstall / Removal
+        If short, type it here, otherwise, See: DOCUMENTATION

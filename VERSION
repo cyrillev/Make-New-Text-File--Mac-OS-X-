@@ -1,0 +1,18 @@
+
+    Name:        New Text File ( New Text File in Current Directory/Window )
+    Version:     0.1
+    Author:      Scott Haneda <scott@newgeo.com>
+    Created:     10/16/2010
+    Location:    http://github.com/slowcode
+    Language:    AppleScript / Bash
+    Support:     See files DOCUMENTATION, LICENSE, NOTES, README, VERSION
+    License:     The MIT License
+    Filename:    ##FILENAME##
+
+    # END VERSION DATA #
+
+    The above file header data is always the most current. Often times this
+    header may not make it into all supporting files. When looking for the
+    application version, contact information, or meta data about the
+    application that must to be accurate, always consult this file. This file
+    is always be current and accurate.
