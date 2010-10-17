@@ -1,39 +1,1 @@
--- Scott Haneda twitter://@cometbus 10/15/2010 11:43:39 PM @cometbus
--- ** I hate AppleScript, I hate the comments, I hate the intedenting, I hate the human like syntax 
--- that mkaes things harder, I hate that I cant do real multi-line comments, and I hate the terribly thought 
--- out implemebtation of integrating shell commands into the language ** --
-
-set DEBUG to false
-
-set now_path to null -- Current directory
-
--- If there is a Finder window open, store that reference
-try
-	tell application "Finder" to set now_path to POSIX path of (target of window 1 as alias)
-end try
-
--- No Finder window open? inform the user to fix tha problem
-if (now_path = null) then
-	-- Looks like there are no windows open, where would we make the file?
-	if (DEBUG) then display dialog "Sorry, you did not select a target to make your new text file... dumb ass!"
-	return false
-else
-	-- Looking good, a text file will be made
-	if (DEBUG) then display dialog "now_path: " & now_path
-	
-	-- Set some variables up
-	set base_file_name to "A_File" -- Base filename
-	set ext to "txt" -- File extension
-	set now_date to do shell script ("/bin/date '+%H.%M.%S'") as string -- date to provide uniqueness
-	set random_string to (random number from 200 to 999 as integer) -- random string to provide precision beyond one second uniquness
-	set file_name to base_file_name & "." & now_date & "." & random_string & "." & ext -- Bring it all together to make a new filename
-	if (DEBUG) then display dialog "file_name: " & file_name
-	
-	-- cd into the direotry of the front most window
-	do shell script "cd " & quoted form of now_path & "; /usr/bin/touch " & file_name -- All in one command of the ENV resets apparently
-	
-	-- Maybe one day I will get this working
-	-- Open the file in my favoriate editor
-	--  do shell script "/usr/bin/open -a 'textmate' " & file_name
-	-- do shell script "open " & quoted form of file_name
-end if
+-- See README for version and documentationset (DEBUG) to falseset now_path to null -- Current directoryset open_file to true -- If the user wants the file to auto open in a text editorset inject_date to true -- If the user wants line 1 to be the date followed by 2 returns-- Define favoraite text editor, exactly as the app is named, sans ".app"set favorite_text_editor to "TextEdit"set creation_date to do shell script "date '+Date: %m.%d.%Y'" -- For injecting into the newf= ffileif (DEBUG) then display dialog "Date is set..." & creation_date-- If there is a Finder window open, store that referencetry	tell application "Finder" to set now_path to POSIX path of (target of window 1 as alias)end try-- No Finder window open? inform the user to fix that problemif (now_path = null) then	-- No windows open, where would we make the file?	display dialog "Sorry, you did not open a folder to make your new text file in... dumb ass!"	return falseelse	-- All ok, make the text file	if (DEBUG) then display dialog "now_path: " & now_path		-- Set some variables up	set base_file_name to "A_File" -- Base filename	set ext to "txt" -- File extension	set now_date to do shell script ("/bin/date '+%H.%M.%S'") as string -- date to provide uniqueness, could be merged with inject_date to save a do shell script call	set random_string to (random number from 200 to 999 as integer) -- random string to provide precision beyond one second uniqueness	set file_name to base_file_name & "." & now_date & "." & random_string & "." & ext -- Bring it all together to make a new filename	if (DEBUG) then display dialog "file_name: " & file_name		-- cd into the direotry of the front most window	do shell script "cd " & (quoted form of now_path) & "; /usr/bin/touch " & file_name -- All in one command or the ENV resets apparently	-- set full path to the file, including the file		-- Was the inject variable set	if (inject_date = true) then		set date_append_cmd to "/bin/echo " & (quoted form of creation_date) & " >> " & (quoted form of now_path & file_name)		if (DEBUG) then display dialog date_append_cmd		do shell script (date_append_cmd)	else		-- Do nothing for now, maybe something laters		if (DEBUG) then "Running in the else"	end if		-- Was the open_file variable set?	if (open_file = true) then		set open_cmd to "open -a " & favorite_text_editor & " " & (quoted form of now_path & file_name)		if (DEBUG) then display dialog open_cmd		do shell script (open_cmd)	else		-- Do not open in your text editor		-- but you could do something else I haven't thought of yet	end ifend if -- End checking of the window is open or not.
