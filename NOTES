@@ -11,6 +11,8 @@
 
     # END VERSION DATA #
     
+                              * * * * * * * * * * *                          
+    
     10/16/2010 02:08:08 AM - There is a good deal of scrap code at the bottom
     of the Make New Text file.scpt file. This may come in handy if I need to
     alter this script to work in a way that roots with a file called
@@ -34,3 +36,9 @@
     probably going all bash, which I started trying to do, but got too messy
     with all the `do shell script` crap. Though do make sure you change the
     `open -a` as that is not supported anywhere but Max OS X I beieve.
+    
+                              * * * * * * * * * * *                          
+    
+    10/17/2010 03:16:30 AM - If no folder is selected, or the Desktop is
+    selected, nothing happens. Under these conditions, perhaps a file should be
+    made on the Desktop instead.
